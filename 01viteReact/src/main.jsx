@@ -12,8 +12,18 @@ function MyApp(){
 const anotherElement = (
   <a href="https://google.com" target='_blank'> Visit gooogle </a>
 )
+const user='agam & coffee'
+const reactElement=React.createElement(
+  'a',
+  {href:'https://google.com',target:'_blank'},
+  'click me daddy',
+  user
+
+
+)
 ReactDOM.createRoot(document.getElementById('root')).render(
  
-    anotherElement
+    // <App/>
+    reactElement
 
 )
