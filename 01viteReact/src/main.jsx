@@ -9,8 +9,11 @@ function MyApp(){
   </div>
  )
 }
+const anotherElement = (
+  <a href="https://google.com" target='_blank'> Visit gooogle </a>
+)
 ReactDOM.createRoot(document.getElementById('root')).render(
  
-    <MyApp />
+    anotherElement
 
 )
