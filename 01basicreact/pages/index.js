@@ -86,7 +86,7 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             <h2>
-              Templates <span>-&gt;</span>
+              Templatesssss <span>-&gt;</span>
             </h2>
             <p>
               Discover and deploy boilerplate example Next.js&nbsp;projects.
