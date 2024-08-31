@@ -5,14 +5,16 @@ import './App.css'
 
 function App() {
   // we get 2 things in the form of an arraY,
-  // first is name (any name),SetCounter is a function.
+  // first is name (any name),SetCounter is a function(any name).
   let [counter,setCounter] = useState(15)
  // useState can have any value initinally 
 
  // let counter =5
   const addValue=()=>{
      //counter=counter+1 
-    setCounter(counter+1)
+     if(counter <20){
+      setCounter(counter+1)
+    }
     }
 const removeValue=()=>{
   setCounter(counter-1)
