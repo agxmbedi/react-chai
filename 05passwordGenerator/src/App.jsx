@@ -5,8 +5,8 @@ function App() {
   const [numberAllowed,setNumberAllowed]=useState(false);
   const [char,setChar]=useState(false);
   const[password,setPassword]=useState("")
-  const passwordRef = useRef(null)
 
+  const passwordRef = useRef(null)
 
   const passwordGenerator=useCallback(()=>{
     let pass=""
@@ -15,17 +15,23 @@ function App() {
     if(char) str="!@#$%^&*()~`"
     for (let i = 0; i <= length; i++) {
       let char= Math.floor(Math.random()* str.length+1)
-     pass=str.charAt(char) 
+     pass +=str.charAt(char) 
     }
     setPassword(pass)
   },[length,numberAllowed,char,setPassword])
 
-  useEffect((
+  const copyPasswordToClipboard=useCallback(()=>{
+    passwordRef.current?.select()
+    passwordRef.current?.setSelectionRange(0,101);
+    window.navigator.clipboard.write(password);
+  },[password]);
+
+  useEffect(()=>{
     passwordGenerator()
-  )=>{},[length,numberAllowed,char,passwordGenerator])
+  },[length,numberAllowed,char,passwordGenerator])
   return (
     
-    <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500">
+    <div className="w-full max-w-max mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500">
       <h1 className='text-white text-center my-3'>Password generator</h1>
     <div className="flex shadow rounded-lg overflow-hidden mb-4">
         <input
@@ -68,10 +74,10 @@ function App() {
       <div className="flex items-center gap-x-1">
           <input
               type="checkbox"
-              defaultChecked={charAllowed}
+              defaultChecked={char}
               id="characterInput"
               onChange={() => {
-                  setCharAllowed((prev) => !prev )
+                  setChar((prev) => !prev )
               }}
           />
           <label htmlFor="characterInput">Characters</label>
