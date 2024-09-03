@@ -23,6 +23,7 @@ function App() {
   const copyPasswordToClipboard=useCallback(()=>{
     passwordRef.current?.select()
     passwordRef.current?.setSelectionRange(0,10);
+    
     window.navigator.clipboard.writeText(password);
   },[password]);
 
@@ -53,7 +54,7 @@ function App() {
         <input 
         type="range"
         min={6}
-        max={100}
+        max={50}
         value={length}
          className='cursor-pointer'
          onChange={(e) => {setLength(e.target.value)}}
