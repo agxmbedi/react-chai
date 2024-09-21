@@ -2,7 +2,6 @@ import './App.css'
 import config from './config/config';
 
 function App() {
-  console.log(appwriteUrl);
   
 
   return (
