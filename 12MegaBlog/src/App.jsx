@@ -4,6 +4,7 @@ import {useDispatch} from 'react-redux'
 import config from './config/config';
 import authService from './appwrite/auth';
 import {login,logout} from './store/authSlice'
+import {Header,Footer} from './components'
 
 
 
@@ -27,7 +28,19 @@ function App() {
  },[])
 
   return !loading ?(
-    <div className='min-h-sc'>test </div>
+    <div className='min-h-sc flex flex-wrap 
+    content-between bg-gray-400'>
+      <div className='w-full block'>
+        <Header/>
+        <main>
+          {/* <Outlet/> */}
+        </main>
+        <Footer/>
+
+      </div>
+    
+    
+     </div>
   ) : null
 }
 
