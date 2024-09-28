@@ -1,4 +1,5 @@
-import {configureStore} from '@reactjs/toolkit'
+import {configureStore} from '@reduxjs/toolkit';
+// import authSlice from './authSlice';
 import { useReducer } from 'react';
 
 const store = configureStore({
